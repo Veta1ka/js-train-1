@@ -4,6 +4,11 @@
 function isEvenNumber(num) {
   // Перевірити, чи число num є парним
   // Повернути результат перевірки (true або false) як результат функції
+  if (num % 2 == 0) {
+    return "true";
+  } else {
+    return "false";
+  }
 }
 
 console.log("Завдання 1 ====================================");
@@ -17,6 +22,12 @@ function calculateSum(n) {
   // Запустити цикл для змінної i від 1 до n
   // Додати поточне значення i до змінної sum
   // Повернути значення змінної sum
+  let sum = 0;
+  let i = 0;
+  for (i; i <= n; i += 1) {
+    sum += i;
+  }
+  return sum;
 }
 
 console.log("Завдання 2 ====================================");
@@ -32,6 +43,18 @@ function isPrimeNumber(num) {
   // Перевіряємо, чи num ділиться націло на поточне значення i
   // Якщо так, то num не є простим, тому повертаємо false
   // Якщо під час циклу не знайдено дільників, то num є простим, тому повертаємо true
+  if (num <= 1) {
+    return "false";
+  } else {
+    let i = 2;
+    for (i; i < num - 1; i += 1) {
+      if (num % i == 0) {
+        return "false";
+      } else {
+        return "true";
+      }
+    }
+  }
 }
 
 console.log("Завдання 3 ====================================");
@@ -44,6 +67,8 @@ function isPositiveNumber(num) {
   // Перевіряємо, чи число num більше 0
   // Якщо так, то num є позитивним, тому повертаємо true
   // В іншому випадку, якщо num менше або дорівнює 0, то num не є позитивним, тому повертаємо false
+  let vid = num > 0 ? "true" : "false";
+  return vid;
 }
 
 console.log("Завдання 4 ====================================");
@@ -56,6 +81,8 @@ function isEmptyString(str) {
   // Перевіряємо, чи рядок str дорівнює пустому рядку ('')
   // Якщо так, то str є порожнім рядком, тому повертаємо true
   // В іншому випадку, якщо str містить хоча б один символ, то str не є порожнім рядком, тому повертаємо false
+  let st = str === "" ? "true" : "false";
+  return st;
 }
 
 console.log("Завдання 5 ====================================");
@@ -69,6 +96,8 @@ function checkDataType(value) {
   // Отримуємо тип значення value за допомогою оператора typeof
   // Виводимо у консоль повідомлення, яке містить значення value та його тип
   // Повертаємо тип значення value
+  let val = typeof value;
+  return val;
 }
 
 // Приклади виклику функції
@@ -84,6 +113,11 @@ function findMax(num1, num2) {
   // Порівнюємо num1 та num2
   // Якщо num1 більше num2, то num1 є максимальним, тому повертаємо num1
   // В іншому випадку (якщо num2 більше або дорівнює num1), то num2 є максимальним, тому повертаємо num2
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
 }
 
 // Приклади виклику функції
@@ -101,6 +135,13 @@ function getUserStatus(age) {
   // Якщо age менше 18, то користувач є "Неповнолітнім"
   // Якщо age більше або дорівнює 18 і менше 65, то користувач є "Дорослим"
   // В іншому випадку (якщо age більше або дорівнює 65), то користувач є "Пенсіонером"
+  if (age < 18) {
+    return "Неповнолітній";
+  } else if (age < 65) {
+    return "Дорослий";
+  } else if (age >= 65) {
+    return "Пенсіонер";
+  }
 }
 
 // Приклади виклику функції
@@ -124,6 +165,33 @@ function getDayOfWeek(dayNumber) {
   // Якщо dayNumber = 7, то day = "Неділя"
   // Якщо значення dayNumber не співпадає з жодним з випадків, то day = "Невірний номер дня"
   // Повертаємо назву дня тижня, яку зберегли у змінній day
+  let day = dayNumber;
+  switch (day) {
+    case 1:
+      console.log("Понеділок");
+      break;
+    case 2:
+      console.log("Вівторок");
+      break;
+    case 3:
+      console.log("Середа");
+      break;
+    case 4:
+      console.log("Четвер");
+      break;
+    case 5:
+      console.log("П'ятниця");
+      break;
+    case 6:
+      console.log("Субота");
+      break;
+    case 7:
+      console.log("Неділя");
+      break;
+    default:
+      console.log("Невірний номер дня");
+  }
+  // return day;
 }
 
 // Приклади виклику функції
@@ -143,6 +211,21 @@ function getVariableType(variable) {
   // Якщо тип змінної - boolean, то повідомлення = "Це булеве значення"
   // В іншому випадку (якщо тип змінної не входить у попередні категорії), то повідомлення = "Це інший тип"
   // Повертаємо встановлене повідомлення як результат функції
+
+  let vari = typeof variable;
+  switch (vari) {
+    case "number":
+      console.log("Це число");
+      break;
+    case "string":
+      console.log("Це рядок");
+      break;
+    case "boolean":
+      console.log("Це булеве значення");
+      break;
+    default:
+      console.log("Це інший тип");
+  }
 }
 
 // Приклади виклику функції
@@ -158,6 +241,16 @@ console.log("getVariableType([1, 2, 3])", getVariableType([1, 2, 3])); // Вив
 function factorial(n) {
   // Якщо n дорівнює 0 або 1, повертаємо 1, оскільки факторіал 0 і 1 завжди дорівнює 1.
   // Якщо n більше за 1, ми множимо n на результат виклику тієї самої функції з n-1.
+  let fa = 1;
+  if (n == 1 || n == 0) {
+    return 1;
+  } else {
+    let i = 1;
+    for (i; i < n + 1; i++) {
+      fa = fa * i;
+    }
+  }
+  return fa;
 }
 
 console.log("Завдання 11 ====================================");
@@ -167,19 +260,24 @@ console.log("factorial(10)", factorial(10)); // Виведе: 3628800
 // Задача 12: створити функцію `makeAdder`, яка приймає число `x` і повертає нову функцію, що приймає число `y` і повертає суму `x` та `y`.
 function makeAdder(x) {
   // Вертаємо нову функцію, яка приймає `y`
-  // Сумуємо `x` та `y` і повертаємо результат
+  return function (y) {
+    // Сумуємо `x` та `y` і повертаємо результат
+    return x + y;
+  };
 }
 
 // Створюємо змінну getAdder якій присвоємо результат виконання функції makeAdder з аргументом 5
+let getAdder = makeAdder(5);
 
 console.log("Завдання 12 ====================================");
 // Розкоментуйте після виконаня завдання
-// console.log("getAdder(10)", getAdder(10)); // Виведе: 15
-// console.log("makeAdder(5)(10)", makeAdder(5)(10)); // Виведе: 15
+console.log("getAdder(10)", getAdder(10)); // Виведе: 15
+console.log("makeAdder(5)(10)", makeAdder(5)(10)); // Виведе: 15
 
 // Задача 13: Задача: створити стрілкову функцію, яка приймає два числа і повертає їх добуток.
 let multiply = (x, y) => {
   // Повертаємо добуток x та y
+  return x * y;
 };
 
 console.log("Завдання 13 ====================================");
@@ -189,64 +287,92 @@ console.log("multiply(5, 3)", multiply(5, 3)); // Виведе: 15
 
 function divide(x) {
   // Повертаємо нову функцію, яка приймає `y`
-  // Ділимо `x` на `y` і повертаємо результат
+  return function (y) {
+    // Ділимо `x` на `y` і повертаємо результат
+    return x / y;
+  };
 }
 
 // Створюємо змінну getDivider якій присвоємо результат виконання функції divide з аргументом 2
+let getDivider = divide(2);
 
 console.log("Завдання 14 ====================================");
 // Розкоментуйте після виконаня завдання
-// console.log("getDivider(10)", getDivider(10)); // Виведе: 0.2
-// console.log("divide(2)(10)", divide(2)(10)); // Виведе: 0.2
+console.log("getDivider(10)", getDivider(10)); // Виведе: 0.2
+console.log("divide(2)(10)", divide(2)(10)); // Виведе: 0.2
 
 // Задача 15: Створити мемоізовану версію функції, яка обчислює площу квадрата на основі довжини його сторони.
 
 function memoizedArea() {
   // Ініціалізуємо примітивні змінні для зберігання попереднього аргументу та результату
+  let side1 = null;
+  let side2 = null;
+  let area = 0;
   // Повертаємо функцію яка приймає аргумент side - сторону квадрата
-  // Перевіряємо, чи є введена сторона такою ж, як і в попередньому виклику
-  // Виводимо повідомлення Fetching from cache
-  // Повертаємо попереднє значення
-  // Якщо сторона відрізняється від попередньої, обчислюємо площу та зберігаємо результат та аргумент для майбутнього використання
-  // Виводимо повідомлення Calculating result
-  // Розраховуємо площу
-  // prevSide присвоюємо сторону квадрата
-  // prevResult просвоюємо площу квадрата
-  // Повертаємо площу
+  return (side) => {
+    // Перевіряємо, чи є введена сторона такою ж, як і в попередньому виклику
+    if (side === side1) {
+      // Виводимо повідомлення Fetching from cache
+      console.log("Fetching from cache");
+      // Повертаємо попереднє значення
+      return side2;
+      // Якщо сторона відрізняється від попередньої, обчислюємо площу та зберігаємо результат та аргумент для майбутнього використання
+    } else {
+      // Виводимо повідомлення Calculating result
+      console.log("Fetching from cache");
+      // Розраховуємо площу
+      side = side1 * side2;
+    }
+
+    // prevSide присвоюємо сторону квадрата
+    let prevSide = side1;
+    // prevResult просвоюємо площу квадрата
+    let prevResult = side;
+    // Повертаємо площу
+    return prevResult;
+  };
 }
 
 //Створюємо змінну squareArea якій присвоємо результат виконання функції memoizedArea
+let squareArea = memoizedArea();
 
 console.log("Завдання 15 ====================================");
 // Розкоментуйте після виконаня завдання
-// console.log("squareArea(5)", squareArea(5)); // Обчислює і виводить 25
-// console.log("squareArea(5)", squareArea(5)); // Виводить "Fetching from cache" і виводить 25 з кешу
-// console.log("squareArea(6)", squareArea(6)); // Обчислює і виводить 36
-// console.log("squareArea(6)", squareArea(6)); // Виводить "Fetching from cache" і виводить 36 з кешу
+console.log("squareArea(5)", squareArea(5)); // Обчислює і виводить 25
+console.log("squareArea(5)", squareArea(5)); // Виводить "Fetching from cache" і виводить 25 з кешу
+console.log("squareArea(6)", squareArea(6)); // Обчислює і виводить 36
+console.log("squareArea(6)", squareArea(6)); // Виводить "Fetching from cache" і виводить 36 з кешу
 
 // Задача 16: Задача: створити функціональний вираз для обчислення кубу числа.
 let cube = function (n) {
   // Повертаємо n в кубі
+  return n * n * n;
 };
 
 console.log("Завдання 16 ====================================");
 console.log("cube(3)", cube(3)); // Виведе: 27
 
 // Задача 17: створити дві функції, одна з яких збільшує число на 1, а інша - множить число на 2, а потім створити композицію цих функцій.
-function increment(n) {
+let func1 = function increment(n) {
   // Повертаємо n + 1
-}
+  return n + 1;
+};
 
-function double(n) {
+let func2 = function double(n) {
   // Повертаємо n*2
-}
+  return n * 2;
+};
 
 function compose(func1, func2) {
   // Повертаємо нову функцію, яка приймає аргумент n
-  // Повертаємо func2, в яку передаємо func1 з аргументом n
+  return function comp(n) {
+    // Повертаємо func2, в яку передаємо func1 з аргументом n
+    // return func1(func2(n));
+  };
 }
 
 // Створюємо змінну createCompose якій присвоємо результат виконання функції compose з аргументами increment та double
+let createCompose = compose();
 console.log("Завдання 17 ====================================");
 // Розкоментуйте після виконаня завдання
-// console.log("createCompose(5)", createCompose(5)); // Виведе: 12 (5+1=6, 6*2=12)
+console.log("createCompose(5)", createCompose(5)); // Виведе: 12 (5+1=6, 6*2=12)
